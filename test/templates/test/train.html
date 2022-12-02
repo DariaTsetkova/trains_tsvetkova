@@ -1,0 +1,20 @@
+{% extends 'test/base.html' %}
+
+{% block title %}
+    Поезда
+{% endblock %}
+
+{% block entity_name %}
+    Поезда
+{% endblock %}
+
+{% block cycle %}
+    {% for el in train_items %}
+	<div>
+        <h2>{{ el.number }}</h2>
+		<p>{{ el.train_type }}</p>
+		<p>{{ el.vagon_number }}</p>
+        <hr>
+	</div>
+	{% endfor %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'test/base.html' %}
+
+{% block title %}
+Маршруты
+{% endblock %}
+
+{% block entity_name %}
+Маршруты
+{% endblock %}
+
+{% block cycle %}
+    {% for el in path_items %}
+	<div>
+		<h2>{{ el.start_station }}</h2>
+		<p>{{ el.end_station }}</p>
+		<p>{{ el.station_list}}</p>
+        <p>{{ el.start_time}}</p>
+        <p>{{ el.end_time}}</p>
+        <p>{{ el.train}}</p>
+        <hr>
+	</div>
+	{% endfor %}
+{% endblock %}

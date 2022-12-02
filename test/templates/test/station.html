@@ -1,0 +1,19 @@
+{% extends 'test/base.html' %}
+
+{% block title %}
+Станции
+{% endblock %}
+
+{% block entity_name %}
+Станции
+{% endblock %}
+
+{% block cycle %}
+    {% for el in station_items %}
+	<div>
+		<h2>{{ el.name }}</h2>
+		<p>{{ el.zone }}</p>
+        <hr>
+	</div>
+	{% endfor %}
+{% endblock %}
