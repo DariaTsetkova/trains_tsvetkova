@@ -29,14 +29,19 @@ class Station(models.Model):
 
 
 class Path(models.Model):
-    start_station = models.ForeignKey('Station', null=True, on_delete=models.PROTECT, verbose_name='Начальная станция')
-    end_station = models.ForeignKey('Station', null=True, on_delete=models.PROTECT, verbose_name='Конечная станция')
+    start_station = models.ForeignKey('Station', null=True, on_delete=models.PROTECT, verbose_name='Начальная станция', related_name="start_path")
+    end_station = models.ForeignKey('Station', null=True, on_delete=models.PROTECT, verbose_name='Конечная станция', related_name="end_path")
     station_list = models.TextField(null=True, blank=True, verbose_name="Список станций")
     start_time = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name="Отправление")
     end_time = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name="Прибытие")
-    end_station = models.ForeignKey('Train', null=True, on_delete=models.PROTECT, verbose_name='Поезд')
+    train = models.ForeignKey('Train', null=True, on_delete=models.PROTECT, verbose_name='Поезд')
+
+    def __str__(self):
+        result = str(self.start_station) + " - " + str(self.end_station)
+        return result
 
     class Meta:
         verbose_name_plural = 'График движения'
         verbose_name = 'График движения'
         ordering = ['-id']
+

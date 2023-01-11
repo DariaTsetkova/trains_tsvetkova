@@ -10,14 +10,14 @@
 
 {% block cycle %}
     {% for el in path_items %}
-	<div>
-		<h2>{{ el.start_station }}</h2>
-		<p>{{ el.end_station }}</p>
-		<p>{{ el.station_list}}</p>
-        <p>{{ el.start_time}}</p>
-        <p>{{ el.end_time}}</p>
-        <p>{{ el.train}}</p>
+ <div>
+  <h2>Маршрут "{{ el.start_station }} - {{ el.end_station }}"</h2>
+  <p>Остановки: {{ el.station_list}}</p>
+        <p>Время отправления: {{ el.start_time}}</p>
+        <p>Время прибытия: {{ el.end_time}}</p>
+        <p>Поезд №{{ el.train}}</p>
         <hr>
-	</div>
-	{% endfor %}
+ </div>
+ {% endfor %}
 {% endblock %}
+

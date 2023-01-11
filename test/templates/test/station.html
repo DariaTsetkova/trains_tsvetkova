@@ -10,10 +10,10 @@
 
 {% block cycle %}
     {% for el in station_items %}
-	<div>
-		<h2>{{ el.name }}</h2>
-		<p>{{ el.zone }}</p>
+ <div>
+  <h2>Станция {{ el.name }}</h2>
+  <p>Тарифная зона: {{ el.zone }}</p>
         <hr>
-	</div>
-	{% endfor %}
+ </div>
+ {% endfor %}
 {% endblock %}

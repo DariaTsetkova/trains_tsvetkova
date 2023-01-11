@@ -10,11 +10,11 @@
 
 {% block cycle %}
     {% for el in train_items %}
-	<div>
-        <h2>{{ el.number }}</h2>
-		<p>{{ el.train_type }}</p>
-		<p>{{ el.vagon_number }}</p>
+ <div>
+        <h2>Поезд №{{ el.number }}</h2>
+  <p>{{ el.train_type }}</p>
+  <p>Число вагонов: {{ el.vagon_number }}</p>
         <hr>
-	</div>
-	{% endfor %}
+ </div>
+ {% endfor %}
 {% endblock %}

@@ -15,9 +15,9 @@ class StationAdmin(admin.ModelAdmin):
 
 
 class PathAdmin(admin.ModelAdmin):
-    list_display = ('start_station', 'end_station', 'station_list', 'start_time', 'end_time')
+    list_display = ('start_station', 'end_station', 'station_list', 'start_time', 'end_time', 'train')
     list_display_links = ('start_station', 'end_station', 'station_list')
-    search_fields = ('start_station', 'end_station', 'station_list', 'start_time', 'end_time')
+    search_fields = ('start_station', 'end_station', 'station_list', 'start_time', 'end_time','train')
 
 
 admin.site.register(Train, TrainAdmin)
